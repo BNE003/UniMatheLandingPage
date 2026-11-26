@@ -15,7 +15,11 @@ dann leitet `/go` Android-Geräte automatisch weiter.
 
 ## Ablauf `/go`
 
-- TikTok-/Instagram-/Facebook-In-App-Browser → Anleitung („Tippe oben rechts auf ⋯ …“)
+- Instagram-In-App-Browser → kompakte Seite mit Button „Im App Store öffnen“ (schlichter Link auf die Store-URL)
+- TikTok-/Facebook-In-App-Browser → Anleitung („Tippe oben rechts auf ⋯ …“)
+
+Die Erkennung läuft in `assets/js/go-detect.js` synchron im `<head>` (nur User-Agent, kein Referrer)
+und setzt `<html data-go-view>`, damit beim Laden nichts aufblitzt.
 - iPhone/iPad/Desktop im normalen Browser → sofortige Weiterleitung in den App Store
 - Android → „Android-Version in Vorbereitung“ (bis ein Play-Store-Link eingetragen ist)
 

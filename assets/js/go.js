@@ -1,8 +1,8 @@
 /*
  * UniMathe /go – leitet in normalen Browsern direkt in den passenden Store weiter
- * und zeigt in In-App-Browsern (TikTok & Co.) eine Anleitung.
+ * zeigt in Instagram eine kompakte Seite mit App-Store-Button und in TikTok & Co. eine Anleitung.
  *
- * Store-Links: /assets/js/store-config.js
+ * Store-Links: /assets/js/store-config.js · Erkennung: /assets/js/go-detect.js
  * Erkennung des In-App-Browsers ist Best Effort (User-Agent). Mit /go?help=1
  * wird immer die Anleitung angezeigt und nie automatisch weitergeleitet.
  */
@@ -10,29 +10,15 @@
   'use strict';
 
   var stores = window.UNIMATHE_STORES || {};
-  var ua = navigator.userAgent || '';
-  var params = new URLSearchParams(location.search);
-  var helpMode = params.get('help') === '1';
-
-  // --- Erkennung ------------------------------------------------------------
-  // TikTok (iOS: "musical_ly_…", "BytedanceWebview"; Android: "trill_…", "AppName/musical_ly", "BytedanceWebview")
-  var isTikTok = /musical_ly|trill_|bytedancewebview|bytelocale|tiktok/i.test(ua);
-  // Weitere In-App-Browser mit demselben Problem (Instagram, Facebook) – gleiche Anleitung
-  var isOtherInApp = /instagram|fban|fbav|fb_iab/i.test(ua);
-  var isInApp = isTikTok || isOtherInApp;
-
-  var isIPadOS = /macintosh/i.test(ua) && navigator.maxTouchPoints > 1; // iPadOS meldet sich als Mac
-  var isIOS = /iphone|ipad|ipod/i.test(ua) || isIPadOS;
-  var isAndroid = /android/i.test(ua);
-
-  var platform = isIOS ? 'ios' : isAndroid ? 'android' : 'desktop';
-  var storeUrl = platform === 'android' ? stores.android : stores.ios; // Desktop → App-Store-Webseite
-  var storeName = platform === 'android' ? 'Play Store' : 'App Store';
+  // Erkennung passiert bereits im <head> (go-detect.js), damit nichts aufblitzt.
+  var go = window.UNIMATHE_GO || { view: 'default', platform: 'desktop', storeUrl: stores.ios };
+  var platform = go.platform;
+  var storeUrl = go.storeUrl;
 
   // --- Links & Texte aus der Konfiguration setzen -----------------------------
   document.querySelectorAll('[data-store-link]').forEach(function (a) {
-    var url = storeUrl || stores.ios;
-    if (url) a.href = url;
+    // Schlichter Link ohne target/Handler: genau der Weg, der in Instagram per Tipp den App Store öffnet
+    if (storeUrl) a.href = storeUrl;
   });
   document.querySelectorAll('[data-search-term]').forEach(function (el) {
     el.textContent = stores.searchTerm || 'UniMathe';
@@ -43,22 +29,14 @@
     replaceText('Trotzdem direkt zum App Store', 'Trotzdem direkt zum Play Store');
     replaceText('Der App Store öffnet sich', 'Der Play Store öffnet sich');
     replaceText('Im App Store laden', 'Bei Google Play laden');
+    replaceText('Im App Store öffnen', 'Bei Google Play öffnen');
     document.querySelectorAll('.go-mark').forEach(function (el) {
       if (el.textContent === 'App Store …') el.textContent = 'Play Store …';
     });
   }
 
-  // --- Ansicht wählen -------------------------------------------------------
-  var view;
-  if (platform === 'android' && !stores.android) {
-    view = 'android';                       // noch keine Android-App
-  } else if (helpMode || isInApp) {
-    view = 'guide';                         // Anleitung, keine automatische Weiterleitung
-  } else if (storeUrl) {
-    view = 'redirect';
-  } else {
-    view = 'default';
-  }
+  // --- Ansicht anzeigen ---------------------------------------------------
+  var view = go.view;
   show(view);
 
   if (view === 'redirect') {

@@ -12,6 +12,7 @@
 <link rel="stylesheet" href="/assets/css/site.css">
 <link rel="stylesheet" href="/assets/css/go.css">
 <script src="/assets/js/store-config.js"></script>
+<script src="/assets/js/go-detect.js"></script>
 </head>
 <body class="um-blue go-body">
   <header class="go-header">
@@ -74,6 +75,22 @@
         </button>
         <a class="go-link" data-store-link="ios" href="#">Trotzdem direkt zum App Store</a>
       </div>
+    </section>
+
+    <!-- Instagram-In-App-Browser: kompakt, ohne Tutorial. Der Button ist ein schlichter Link
+         direkt auf die App-Store-URL (wie „Trotzdem direkt zum App Store“) – kein Umweg über /go. -->
+    <section class="go-card go-card-compact" data-view="instagram" hidden>
+      <span class="go-app-icon" aria-hidden="true">
+        <svg width="88" height="88" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#1468F0"/><path d="M18 14v22a14 14 0 0 0 28 0V14" fill="none" stroke="#FFE14D" stroke-width="8" stroke-linecap="round"/></svg>
+      </span>
+      <h1 class="go-app-name">UniMathe</h1>
+      <p class="go-app-claim">Deine Mathevorlesung. <span class="go-mark">Endlich verständlich.</span></p>
+      <a class="go-btn" data-store-link="ios" href="#">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"></path><path d="m7 10 5 5 5-5"></path><path d="M5 20h14"></path></svg>
+        Im App Store öffnen
+      </a>
+      <p class="go-note">Für iPhone und iPad</p>
+      <a class="go-link go-link-quiet" href="/go?help=1">Probleme beim Öffnen?</a>
     </section>
 
     <!-- Android -->

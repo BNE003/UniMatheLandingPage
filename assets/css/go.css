@@ -129,3 +129,25 @@
 @media (prefers-reduced-motion: reduce) {
   .go-arrow, .go-spinner { animation: none; }
 }
+
+/* Ansicht aus go-detect.js (<html data-go-view>) – greift schon beim ersten Zeichnen, kein Aufblitzen */
+html[data-go-view] .go-card { display: none !important; }
+html[data-go-view="default"] .go-card[data-view="default"],
+html[data-go-view="redirect"] .go-card[data-view="redirect"],
+html[data-go-view="guide"] .go-card[data-view="guide"],
+html[data-go-view="instagram"] .go-card[data-view="instagram"],
+html[data-go-view="android"] .go-card[data-view="android"] { display: flex !important; }
+
+/* Instagram: kompakte App-Karte */
+.go-card-compact { align-items: center; text-align: center; padding-top: 30px; }
+.go-app-icon {
+  display: block;
+  width: 88px; height: 88px;
+  border-radius: 20px;
+  box-shadow: 0 0 0 4px rgba(255,255,255,.14), 0 18px 36px rgba(4,16,48,.45);
+  overflow: hidden;
+}
+.go-app-icon svg { display: block; }
+.go-app-name { margin: 18px 0 6px; font-size: 34px; line-height: 1.1; font-weight: 900; letter-spacing: -1px; }
+.go-app-claim { margin: 0 0 24px; font-size: 18px; line-height: 1.45; font-weight: 700; color: #FFFFFF; }
+.go-link-quiet { margin-top: 14px; font-size: 13px; font-weight: 600; opacity: .8; }
