@@ -1,0 +1,58 @@
+/* Rechtliche Seiten (Datenschutz) im UniMathe-Design */
+.legal-hero { padding: 0 0 56px; }
+.legal-header {
+  width: 100%; max-width: 860px; margin: 0 auto;
+  padding: 0 20px; min-height: 64px;
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+}
+.legal-logo { font-size: 21px; font-weight: 900; letter-spacing: -0.4px; color: #FFFFFF; text-decoration: none; }
+.legal-lang { display: flex; gap: 6px; }
+.legal-lang a {
+  height: 34px; padding: 0 12px; border-radius: 999px;
+  display: flex; align-items: center;
+  background: rgba(255,255,255,0.16); color: #FFFFFF;
+  font-size: 13px; font-weight: 800; text-decoration: none;
+}
+.legal-lang a:hover { background: #FFE14D; color: #0B1B3A; }
+.legal-intro { width: 100%; max-width: 860px; margin: 0 auto; padding: 24px 20px 0; }
+.legal-intro h1 { margin: 0 0 14px; font-size: clamp(34px, 7vw, 60px); line-height: 1.08; font-weight: 900; letter-spacing: -1.5px; }
+.legal-mark {
+  background: #FFE14D; color: #0B1B3A;
+  padding: 0 0.12em; border-radius: 0.12em;
+  -webkit-box-decoration-break: clone; box-decoration-break: clone;
+}
+.legal-intro p { margin: 0; font-size: 17px; line-height: 1.5; max-width: 620px; }
+
+.legal-main { width: 100%; max-width: 860px; margin: 0 auto; padding: 48px 20px 72px; display: flex; flex-direction: column; gap: 48px; }
+.legal-doc h2 { margin: 0 0 6px; font-size: clamp(26px, 4.5vw, 36px); line-height: 1.15; font-weight: 900; letter-spacing: -0.8px; }
+.legal-doc .legal-date { margin: 0 0 28px; font-size: 14px; color: #B9C5DE; }
+.legal-doc h3 {
+  margin: 32px 0 10px;
+  display: flex; align-items: center; gap: 12px;
+  font-size: 20px; line-height: 1.25; font-weight: 900;
+}
+.legal-num {
+  width: 30px; height: 30px; flex-shrink: 0;
+  border-radius: 15px; background: #FFE14D; color: #0B1B3A;
+  font-size: 14px; font-weight: 900;
+  display: flex; align-items: center; justify-content: center;
+}
+.legal-doc p, .legal-doc li { font-size: 16px; line-height: 1.6; color: #D3DCEE; overflow-wrap: anywhere; }
+.legal-doc p { margin: 0 0 12px; }
+.legal-doc ul { margin: 0 0 12px; padding-left: 22px; }
+.legal-doc strong { color: #FFFFFF; }
+.legal-doc a { color: #FFE14D; text-underline-offset: 3px; }
+.legal-doc a:hover { color: #FFFFFF; }
+.legal-card {
+  padding: 18px 20px; border-radius: 18px;
+  background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12);
+}
+.legal-card p:last-child { margin-bottom: 0; }
+.legal-sep { height: 1px; background: rgba(255,255,255,0.12); border: 0; margin: 0; }
+
+.legal-footer { border-top: 1px solid rgba(255,255,255,0.1); }
+.legal-footer div {
+  width: 100%; max-width: 860px; margin: 0 auto; padding: 28px 20px 40px;
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px;
+}
+.legal-footer nav { display: flex; flex-wrap: wrap; gap: 20px; font-size: 14px; }
