@@ -34,6 +34,10 @@
     {
       "source": "/terms",
       "destination": "/agb"
+    },
+    {
+      "source": "/imprint",
+      "destination": "/impressum"
     }
   ]
 }

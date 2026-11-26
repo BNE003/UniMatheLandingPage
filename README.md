@@ -34,6 +34,10 @@ python3 -m http.server 4173
 Framework Preset „Other“, Build Command leer, Output Directory leer bzw. `.` (Root).
 `design/` enthält den Original-Export und wird per `.vercelignore` nicht ausgeliefert.
 
-## Offen
+## Rechtliches
 
-Impressum-, Datenschutz- und Kontakt-Links im Footer (`data-todo` in `index.html`) sind noch Platzhalter.
+| Pfad | Kurzadresse | Datei |
+|---|---|---|
+| `/impressum` | `/imprint` | `impressum/index.html` |
+| `/datenschutz` | `/privacy` | `datenschutz/index.html` |
+| `/agb` | `/terms` | `agb/index.html` |
