@@ -1,0 +1,107 @@
+/* UniMathe – gemeinsame Styles für / und /go */
+
+@font-face {
+  font-family: 'Figtree';
+  font-style: normal;
+  font-weight: 400 900;
+  font-display: swap;
+  src: url("/assets/fonts/figtree-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Noto Serif';
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/assets/fonts/noto-serif-italic-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; scroll-behavior: smooth; }
+html, body { overflow-x: hidden; overflow-x: clip; }
+body { margin: 0; background: #0B1B3A; color: #FFFFFF; font-family: Figtree, system-ui, -apple-system, sans-serif; -webkit-font-smoothing: antialiased; }
+img, svg { max-width: none; }
+a { color: #FFFFFF; }
+a:hover { color: #FFE14D; }
+a:focus-visible { outline: 3px solid #FFE14D; outline-offset: 3px; border-radius: 6px; }
+
+/* Raster-Hintergründe aus dem Entwurf */
+.um-blue {
+  background-color: #1468F0;
+  background-image: linear-gradient(rgba(255,255,255,.11) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.11) 1px, transparent 1px);
+  background-size: 40px 40px;
+  background-position: -1px -1px;
+}
+.um-navy {
+  background-color: #0B1B3A;
+  background-image: linear-gradient(rgba(255,255,255,.045) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.045) 1px, transparent 1px);
+  background-size: 40px 40px;
+  background-position: -1px -1px;
+}
+
+/* Gelbe Buttons: Hover/Active wie ein echter Knopf */
+a[href^="/go"][style*="#FFE14D"] { transition: transform .12s ease, box-shadow .12s ease; }
+a[href^="/go"][style*="#FFE14D"]:hover { color: #0B1B3A; transform: translateY(-1px); }
+a[href^="/go"][style*="#FFE14D"]:active { transform: translateY(4px); box-shadow: 0 1px 0 #0B1B3A !important; }
+
+.help-link {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #FFFFFF;
+  opacity: .85;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.help-link:hover { opacity: 1; }
+
+/* Layout-Umschaltung: Mobile-Entwurf bis 759px, Desktop-Entwurf ab 760px */
+.layout-mobile { display: none !important; }
+@media (max-width: 759px) {
+  .layout-desktop { display: none !important; }
+  .layout-mobile { display: flex !important; }
+}
+
+/* Skalierbare Illustrationen (Mobile): feste Entwurfsgröße, per JS auf die verfügbare Breite skaliert */
+.scene { --s: 1; }
+.scene-inner {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%) scale(var(--s));
+  transform-origin: top center;
+}
+
+/* Desktop: zu lange Überschriften auf mittleren Breiten abfangen */
+@media (min-width: 760px) and (max-width: 1100px) {
+  .layout-desktop h1 { font-size: clamp(48px, 6.4vw, 70px) !important; letter-spacing: -1.6px !important; }
+  .layout-desktop h2 { font-size: clamp(40px, 5.4vw, 60px) !important; }
+}
+.layout h1, .layout h2, .layout h3 { overflow-wrap: break-word; hyphens: manual; }
+
+/* Sticky-CTA (nur Mobile) */
+.sticky-cta {
+  position: fixed;
+  left: 0; right: 0; bottom: 0;
+  z-index: 50;
+  padding: 12px 16px calc(18px + env(safe-area-inset-bottom, 0px));
+  display: none;
+  align-items: center;
+  gap: 12px;
+  background: rgba(11,27,58,0.96);
+  border-top: 1px solid rgba(255,255,255,0.14);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  transform: translateY(110%);
+  transition: transform .25s ease;
+}
+.sticky-cta.is-visible { transform: translateY(0); }
+@media (max-width: 759px) {
+  .sticky-cta { display: flex; }
+  .layout-mobile footer { padding-bottom: calc(110px + env(safe-area-inset-bottom, 0px)) !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .sticky-cta, a[href^="/go"] { transition: none !important; }
+}

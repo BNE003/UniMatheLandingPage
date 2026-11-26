@@ -1,0 +1,4 @@
+# Nur die statische Seite ausliefern, nicht den Design-Export
+design/
+README.md
+.claude/

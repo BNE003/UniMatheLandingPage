@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>UniMathe laden</title>
+<meta name="description" content="UniMathe im App Store laden.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#1468F0">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="/assets/fonts/figtree-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/css/site.css">
+<link rel="stylesheet" href="/assets/css/go.css">
+<script src="/assets/js/store-config.js"></script>
+</head>
+<body class="um-blue go-body">
+  <header class="go-header">
+    <a href="/" class="go-logo">UniMathe</a>
+  </header>
+
+  <main class="go-main">
+    <!-- Standard / Fallback (ohne JavaScript sichtbar) -->
+    <section class="go-card" data-view="default">
+      <span class="go-pill"><span class="go-pill-dot"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2.5 1.2 L8.6 5 L2.5 8.8 Z" fill="#1468F0"></path></svg></span>Aus dem Video? Hier geht’s weiter.</span>
+      <h1 class="go-title">UniMathe <span class="go-mark">laden.</span></h1>
+      <p class="go-text">Tippe auf den Button, um UniMathe im App Store zu öffnen.</p>
+      <!-- Fallback ohne JavaScript; mit JS setzt go.js alle Store-Links aus store-config.js -->
+      <a class="go-btn" data-store-link="ios" href="https://apps.apple.com/de/app/h%C3%B6here-mathematik/id6745843324">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"></path><path d="m7 10 5 5 5-5"></path><path d="M5 20h14"></path></svg>
+        Im App Store laden
+      </a>
+      <p class="go-note">Für iPhone · Android-Version in Vorbereitung</p>
+    </section>
+
+    <!-- Weiterleitung läuft (iPhone/iPad/Desktop in normalem Browser) -->
+    <section class="go-card" data-view="redirect" hidden>
+      <span class="go-spinner" aria-hidden="true"></span>
+      <h1 class="go-title go-title-sm">Weiter zum <span class="go-mark">App Store …</span></h1>
+      <p class="go-text">Falls sich nichts tut, tippe hier:</p>
+      <a class="go-btn" data-store-link="ios" href="#">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"></path><path d="m7 10 5 5 5-5"></path><path d="M5 20h14"></path></svg>
+        Im App Store laden
+      </a>
+    </section>
+
+    <!-- Anleitung für TikTok-/In-App-Browser (und /go?help=1) -->
+    <section class="go-card" data-view="guide" hidden>
+      <div class="go-arrow" aria-hidden="true">
+        <svg width="74" height="74" viewBox="0 0 74 74" fill="none" stroke="#FFE14D" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 66 C 20 34, 38 18, 62 12"></path><path d="M44 8 L62 12 L54 28"></path></svg>
+      </div>
+      <span class="go-pill"><span class="go-pill-dot"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2.5 1.2 L8.6 5 L2.5 8.8 Z" fill="#1468F0"></path></svg></span>Fast geschafft!</span>
+      <h1 class="go-title go-title-sm">Öffne diese Seite <span class="go-mark">im Browser.</span></h1>
+
+      <div class="go-step">
+        <span class="go-step-num">1</span>
+        <p>Tippe oben rechts auf <span class="go-key" aria-label="Drei-Punkte-Menü">⋯</span> und wähle <strong>‚Im Browser öffnen‘</strong>.</p>
+      </div>
+      <div class="go-step">
+        <span class="go-step-num">2</span>
+        <p>Der App Store öffnet sich dann automatisch.</p>
+      </div>
+
+      <div class="go-divider"><span>oder</span></div>
+
+      <div class="go-alt">
+        <span class="go-alt-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1468F0" stroke-width="2.6" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg></span>
+        <p>Suche im App Store nach <strong data-search-term>UniMathe</strong></p>
+      </div>
+
+      <div class="go-actions">
+        <button type="button" class="go-btn go-btn-ghost" data-copy>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2.5"></rect><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"></path></svg>
+          <span data-copy-label>Link kopieren</span>
+        </button>
+        <a class="go-link" data-store-link="ios" href="#">Trotzdem direkt zum App Store</a>
+      </div>
+    </section>
+
+    <!-- Android -->
+    <section class="go-card" data-view="android" hidden>
+      <span class="go-pill"><span class="go-pill-dot"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2.5 1.2 L8.6 5 L2.5 8.8 Z" fill="#1468F0"></path></svg></span>Android</span>
+      <h1 class="go-title go-title-sm">Android-Version <span class="go-mark">in Vorbereitung.</span></h1>
+      <p class="go-text">UniMathe gibt es aktuell für iPhone und iPad. Die Android-App ist in Arbeit – schau bald wieder vorbei.</p>
+      <a class="go-btn go-btn-ghost" href="/">Zur Startseite</a>
+    </section>
+  </main>
+
+  <script src="/assets/js/go.js"></script>
+</body>
+</html>

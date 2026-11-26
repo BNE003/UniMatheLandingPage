@@ -1,0 +1,131 @@
+/* /go – Weiterleitung & Anleitung im UniMathe-Design */
+.go-body {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+.go-header {
+  width: 100%;
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 0 20px;
+  min-height: 56px;
+  display: flex;
+  align-items: center;
+}
+.go-logo { font-size: 21px; font-weight: 900; letter-spacing: -0.4px; color: #FFFFFF; text-decoration: none; }
+
+.go-main {
+  flex: 1;
+  width: 100%;
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 8px 16px calc(32px + env(safe-area-inset-bottom, 0px));
+}
+.go-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+  padding: 24px 20px 26px;
+  border-radius: 26px;
+  background: #0B1B3A;
+  background-image: linear-gradient(rgba(255,255,255,.045) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.045) 1px, transparent 1px);
+  background-size: 40px 40px;
+  box-shadow: 0 24px 50px rgba(4,16,48,0.35);
+}
+.go-card[hidden] { display: none !important; }
+
+.go-pill {
+  display: flex; align-items: center; gap: 8px;
+  height: 30px; padding: 0 12px 0 6px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.16);
+  font-size: 13px; font-weight: 700;
+}
+.go-pill-dot { width: 20px; height: 20px; border-radius: 10px; background: #FFFFFF; display: flex; align-items: center; justify-content: center; }
+
+.go-title { margin: 16px 0 12px; font-size: 34px; line-height: 1.12; font-weight: 900; letter-spacing: -1.1px; }
+.go-title-sm { font-size: 30px; }
+.go-mark {
+  background: #FFE14D; color: #0B1B3A;
+  padding: 0 0.12em; border-radius: 0.12em;
+  -webkit-box-decoration-break: clone; box-decoration-break: clone;
+}
+.go-text { margin: 0 0 22px; font-size: 16px; line-height: 1.45; color: #D3DCEE; }
+.go-note { margin: 14px 0 0; align-self: center; font-size: 13px; font-weight: 600; color: #B9C5DE; text-align: center; }
+
+.go-btn {
+  align-self: stretch;
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  height: 56px; padding: 0 20px;
+  border: 0; border-radius: 16px;
+  background: #FFE14D; color: #0B1B3A;
+  font: inherit; font-size: 17px; font-weight: 900;
+  text-decoration: none; cursor: pointer;
+  box-shadow: 0 5px 0 #06112a;
+  transition: transform .12s ease, box-shadow .12s ease;
+}
+.go-btn:hover { color: #0B1B3A; transform: translateY(-1px); }
+.go-btn:active { transform: translateY(4px); box-shadow: 0 1px 0 #06112a; }
+.go-btn-ghost { background: #FFFFFF; }
+
+.go-link { margin-top: 18px; align-self: center; font-size: 14px; font-weight: 700; color: #FFFFFF; text-underline-offset: 3px; }
+
+/* Anleitung */
+.go-arrow { position: absolute; top: -6px; right: 14px; animation: go-nudge 1.6s ease-in-out infinite; }
+@keyframes go-nudge { 0%,100% { transform: translate(0,0); } 50% { transform: translate(4px,-6px); } }
+
+.go-step { display: flex; align-items: flex-start; gap: 12px; margin-top: 14px; }
+.go-step p { margin: 3px 0 0; font-size: 18px; line-height: 1.45; font-weight: 600; }
+.go-step strong { color: #FFE14D; font-weight: 900; }
+.go-step-num {
+  width: 32px; height: 32px; flex-shrink: 0;
+  border-radius: 16px; background: #FFE14D; color: #0B1B3A;
+  font-size: 16px; font-weight: 900;
+  display: flex; align-items: center; justify-content: center;
+}
+.go-key {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-width: 34px; height: 26px; padding: 0 6px;
+  border-radius: 8px; background: #FFFFFF; color: #0B1B3A;
+  font-weight: 900; line-height: 1; vertical-align: 1px;
+}
+
+.go-divider { align-self: stretch; display: flex; align-items: center; gap: 12px; margin: 24px 0 18px; color: #B9C5DE; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: .6px; }
+.go-divider::before, .go-divider::after { content: ""; flex: 1; height: 1px; background: rgba(255,255,255,.18); }
+
+.go-alt {
+  align-self: stretch;
+  display: flex; align-items: center; gap: 12px;
+  padding: 14px 16px;
+  border-radius: 16px;
+  background: #FFFFFF; color: #0B1B3A;
+}
+.go-alt p { margin: 0; font-size: 16px; line-height: 1.35; font-weight: 600; }
+.go-alt strong { font-weight: 900; }
+.go-alt-icon { width: 40px; height: 40px; flex-shrink: 0; border-radius: 20px; background: #E3EDFF; display: flex; align-items: center; justify-content: center; }
+
+.go-actions { align-self: stretch; display: flex; flex-direction: column; margin-top: 22px; }
+
+/* Spinner */
+.go-spinner {
+  width: 34px; height: 34px;
+  border-radius: 50%;
+  border: 4px solid rgba(255,255,255,.2);
+  border-top-color: #FFE14D;
+  animation: go-spin .8s linear infinite;
+}
+@keyframes go-spin { to { transform: rotate(360deg); } }
+
+@media (min-width: 600px) {
+  .go-main { padding-top: 48px; }
+  .go-card { padding: 36px 36px 38px; }
+  .go-title { font-size: 44px; }
+  .go-title-sm { font-size: 38px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .go-arrow, .go-spinner { animation: none; }
+}
