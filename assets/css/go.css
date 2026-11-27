@@ -151,11 +151,12 @@ html[data-go-view="android"] .go-card[data-view="android"] { display: flex !impo
 .go-app-claim { margin: 0 0 24px; font-size: 18px; line-height: 1.45; font-weight: 700; color: #FFFFFF; }
 .go-link-quiet { margin-top: 14px; font-size: 13px; font-weight: 600; opacity: .8; }
 
-/* Blauer Button (Instagram-Ansicht) */
+/* Blauer Button (Instagram-Ansicht) – Verlauf wie das App-Icon, bewusst anders als der Seitenhintergrund */
 .go-btn-blue {
-  background: #1468F0;
+  background: #3A3BE6;
+  background-image: linear-gradient(120deg, #4A2BE3 0%, #2563EB 55%, #0E9FC4 100%);
   color: #FFFFFF;
   box-shadow: 0 0 0 2px rgba(255,255,255,.18) inset, 0 5px 0 #06112a;
 }
-.go-btn-blue:hover { color: #FFFFFF; background: #2B7BFF; }
+.go-btn-blue:hover { color: #FFFFFF; filter: brightness(1.08); }
 .go-btn-blue:active { box-shadow: 0 0 0 2px rgba(255,255,255,.18) inset, 0 1px 0 #06112a; }
