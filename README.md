@@ -41,3 +41,4 @@ Framework Preset „Other“, Build Command leer, Output Directory leer bzw. `.`
 | `/impressum` | `/imprint` | `impressum/index.html` |
 | `/datenschutz` | `/privacy` | `datenschutz/index.html` |
 | `/agb` | `/terms` | `agb/index.html` |
+| `/support` | `/hilfe` | `support/index.html` (FAQ, Kontakt) |

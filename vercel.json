@@ -38,6 +38,10 @@
     {
       "source": "/imprint",
       "destination": "/impressum"
+    },
+    {
+      "source": "/hilfe",
+      "destination": "/support"
     }
   ]
 }
